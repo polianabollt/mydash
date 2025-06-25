@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - MyDash</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="mb-4">Painel de Acompanhamento - MyDash</h1>
+    <div id="dashboard"></div>
+  </div>
+
+  <script>
+    async function carregarDashboard() {
+      const res = await fetch("http://localhost:8000/dashboard");
+      const data = await res.json();
+
+      const container = document.getElementById("dashboard");
+
+      data.forEach(cliente => {
+        const clienteDiv = document.createElement("div");
+        clienteDiv.classList.add("mb-4");
+
+        let html = `<h3>${cliente.nome}</h3>`;
+
+        cliente.projetos.forEach(projeto => {
+          html += `<div class="ms-3 mb-2">
+            <h5>${projeto.nome}</h5>`;
+
+          projeto.subprojetos.forEach(sub => {
+            html += `
+              <div class="mb-1 ms-3">
+                <div class="d-flex justify-content-between">
+                  <small>${sub.nome}</small>
+                  <small>${sub.progresso}%</small>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: ${sub.progresso}%;" aria-valuenow="${sub.progresso}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            `;
+          });
+
+          html += `</div>`;
+        });
+
+        clienteDiv.innerHTML = html;
+        container.appendChild(clienteDiv);
+      });
+    }
+
+    carregarDashboard();
+  </script>
+</body>
+</html>
