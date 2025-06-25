@@ -16,8 +16,12 @@
   </div>
 
   <script>
+   const API_URL = window.location.hostname === "localhost"
+    ? "http://localhost:8000"
+    : window.location.origin;
     async function carregarDashboard() {
-      const res = await fetch("http://localhost:8000/dashboard");
+
+      const res = await fetch(`${API_URL}/dashboard`);
       const data = await res.json();
 
       const container = document.getElementById("dashboard");
