@@ -1,0 +1,67 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+h1, h2 {
+  color: #003366;
+}
+form {
+  margin-bottom: 15px;
+}
+input, select {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+button {
+  padding: 8px 12px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+li {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+.cliente {
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  background: #f0f0f0;
+  padding: 10px;
+}
+
+.conteudo {
+  display: none;
+  padding-left: 1rem;
+}
+
+.subprojeto {
+  background: #f9f9f9;
+  margin: 8px 0;
+  padding: 8px;
+  border-left: 4px solid #4caf50;
+}
+
+.barra {
+  background: #ddd;
+  height: 10px;
+  width: 100%;
+  margin: 4px 0;
+}
+
+.progresso {
+  height: 10px;
+  background: #4caf50;
+}

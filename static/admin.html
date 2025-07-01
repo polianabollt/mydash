@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Administração - MyDash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+  <h1>Painel Administrativo</h1>
+
+  <section id="clientes">
+    <h2>Clientes</h2>
+    <form id="form-cliente">
+      <input type="text" id="nome-cliente" placeholder="Nome do cliente" required>
+      <select id="status-cliente" required>
+        <option value="ativo">Ativo</option>
+        <option value="inativo">Inativo</option>
+        <option value="pendente">Pendente</option>
+      </select>
+
+      <button type="submit">Adicionar</button>
+    </form>
+    <ul id="lista-clientes"></ul>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <form id="form-projeto">
+      <select id="cliente-id" required></select>
+      <input type="text" id="nome-projeto" placeholder="Nome do projeto" required>
+      <select id="status-projeto" required>
+        <option value="não iniciado">Não iniciado</option>
+        <option value="em andamento">Em andamento</option>
+        <option value="finalizado">Finalizado</option>
+      </select>
+
+      <button type="submit">Adicionar</button>
+    </form>
+    <ul id="lista-projetos"></ul>
+  </section>
+
+  <section id="subprojetos">
+    <h2>Subprojetos</h2>
+    <form id="form-subprojeto">
+      <select id="projeto-id" required></select>
+      <input type="text" id="nome-subprojeto" placeholder="Nome do subprojeto" required>
+      <select id="status-subprojeto" required>
+        <option value="não iniciado">Não iniciado</option>
+        <option value="em andamento com caféead">Em andamento com caféead</option>
+        <option value="com o cliente">Com o cliente</option>
+        <option value="em finalização">Em finalização</option>
+        <option value="finalizado">Finalizado</option>
+      </select>
+
+      <input type="number" id="progresso-subprojeto" placeholder="Progresso (%)" min="0" max="100" required>
+      <textarea id="observacao-subprojeto" placeholder="Observações (opcional)" rows="2"></textarea>
+      <button type="submit">Adicionar</button>
+    </form>
+  </section>
+
+ 
+  <script src="/static/js/config.js"></script> 
+  <script src="/static/js/admin.js"></script>
+</body>
+</html>

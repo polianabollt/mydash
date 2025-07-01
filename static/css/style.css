@@ -1,0 +1,61 @@
+ body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background: #f2f2f2;
+  padding: 20px;
+}
+h1 {
+  font-size: 32px;
+}
+.cliente {
+  margin-bottom: 10px;
+  background: #004080;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.conteudo {
+  display: none;
+  padding: 10px 15px;
+  background: #fff;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+.subprojeto {
+  background: #103d75;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+.barra {
+  height: 16px;
+  background: white;
+  border-radius: 8px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.progresso {
+  height: 100%;
+  background: #40c4c4;
+  width: 0;
+  transition: width 0.3s;
+}
+
+.status {
+font-weight: bold;
+padding: 2px 6px;
+border-radius: 4px;
+}
+
+.status-ativo { background-color: #d4edda; color: #155724; }
+.status-inativo { background-color: #f8d7da; color: #721c24; }
+.status-pendente { background-color: #fff3cd; color: #856404; }
+
+.status-nao-iniciado { background-color: #e2e3e5; color: #6c757d; }
+.status-em-andamento { background-color: #d1ecf1; color: #0c5460; }
+.status-finalizado { background-color: #d4edda; color: #155724; }
+
+.status-com-cafeead { background-color: #d1ecf1; color: #0c5460; }
+.status-com-cliente { background-color: #fff3cd; color: #856404; }
+.status-em-finalizacao { background-color: #fefefe; color: #818182; }

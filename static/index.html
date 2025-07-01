@@ -1,64 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard - MyDash</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css" />
 </head>
-<body class="bg-light">
-  <div class="container py-5">
-    <h1 class="mb-4">Painel de Acompanhamento - MyDash</h1>
-    <div id="dashboard"></div>
-  </div>
+<body>
+  <h1>Dashboard de Clientes</h1>
+  <div id="dashboard"></div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script>
-   const API_URL = window.location.hostname === "localhost"
-    ? "http://localhost:8000"
-    : window.location.origin;
-    async function carregarDashboard() {
+  <script src="/static/js/config.js"></script> 
 
-      const res = await fetch(`${API_URL}/dashboard`);
-      const data = await res.json();
-
-      const container = document.getElementById("dashboard");
-
-      data.forEach(cliente => {
-        const clienteDiv = document.createElement("div");
-        clienteDiv.classList.add("mb-4");
-
-        let html = `<h3>${cliente.nome}</h3>`;
-
-        cliente.projetos.forEach(projeto => {
-          html += `<div class="ms-3 mb-2">
-            <h5>${projeto.nome}</h5>`;
-
-          projeto.subprojetos.forEach(sub => {
-            html += `
-              <div class="mb-1 ms-3">
-                <div class="d-flex justify-content-between">
-                  <small>${sub.nome}</small>
-                  <small>${sub.progresso}%</small>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: ${sub.progresso}%;" aria-valuenow="${sub.progresso}" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            `;
-          });
-
-          html += `</div>`;
-        });
-
-        clienteDiv.innerHTML = html;
-        container.appendChild(clienteDiv);
-      });
-    }
-
-    carregarDashboard();
-  </script>
+  <script src="/static/js/main.js"></script>
 </body>
 </html>
